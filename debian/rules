@@ -1,8 +1,17 @@
 #!/usr/bin/make -f
-  
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/autotools.mk
 
-# We don't install the webserver at the moment.
-DEB_CONFIGURE_EXTRA_FLAGS := --enable-webless
+override_dh_auto_configure:
+	# When --disable-shared is used, libsispmctl is linked
+	# statically into sispmctl. We deliberately do not install
+	# libsispmctl.
+	dh_auto_configure -- --enable-webless --disable-shared
+
+override_dh_auto_install:
+	dh_auto_install
+	# Do not install static library
+	rm -rf debian/sispmctl/usr/lib \
+	       debian/sispmctl/usr/share/doc/sispmctl/COPYING
+
+%:
+	dh $@
 

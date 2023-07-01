@@ -1,9 +1,9 @@
 Source: sispmctl
 Section: admin
-Priority: extra
+Priority: optional
 Maintainer: Debian QA Group <packages@qa.debian.org>
-Build-Depends: cdbs, debhelper (>= 8.0.0), autotools-dev, libusb-dev (>= 0.1.8)
-Standards-Version: 3.9.2
+Build-Depends: debhelper-compat (=13), libusb-dev (>= 0.1.8), pkg-config
+Standards-Version: 4.6.2
 Homepage: http://sispmctl.sourceforge.net/
 
 Package: sispmctl
