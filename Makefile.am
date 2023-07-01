@@ -1,3 +1,13 @@
-SUBDIRS = . src 
-EXTRA_DIST = LICENCE admin/bootstrap extras/sispmapplet.e3p extras/sispmapplet.e3t  extras/sispmapplet.py extras/sispmform.ui extras/README extras/addheader
+SUBDIRS = src man
 
+ACLOCAL_AMFLAGS = -I m4
+
+exampledir = $(docdir)/examples
+
+dist_example_DATA= \
+	examples/60-sispmctl.rules \
+	examples/passwordsetup.sh \
+	examples/sispmctl.service
+
+dist_doc_DATA = \
+	README.md COPYING
