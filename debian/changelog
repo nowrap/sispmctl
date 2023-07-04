@@ -1,3 +1,9 @@
+sispmctl (4.10-2) unstable; urgency=medium
+
+  * Fix system user name (typo)
+
+ -- Hilko Bengen <bengen@debian.org>  Tue, 04 Jul 2023 14:10:21 +0200
+
 sispmctl (4.10-1) unstable; urgency=medium
 
   * QA upload.
