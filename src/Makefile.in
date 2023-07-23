@@ -353,7 +353,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 libsispmctl_la_LDFLAGS = \
-	-version-info 2:1:2
+	-version-info 2:2:2
 
 lib_LTLIBRARIES = libsispmctl.la
 sispmctl_LDADD = libsispmctl.la
