@@ -1,1 +1,2 @@
 examples/60-sispmctl.rules lib/udev/rules.d/
+debian/sispmctl.metainfo.xml usr/share/metainfo/
