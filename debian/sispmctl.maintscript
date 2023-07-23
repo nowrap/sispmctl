@@ -1,0 +1,1 @@
+rm_conffile /etc/udev/rules.d/60-sispmctl.rules 4.10-1~ sispmctl

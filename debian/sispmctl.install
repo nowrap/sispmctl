@@ -1,1 +1,1 @@
-examples/60-sispmctl.rules etc/udev/rules.d/
+examples/60-sispmctl.rules lib/udev/rules.d/
