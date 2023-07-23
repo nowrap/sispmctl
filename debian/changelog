@@ -1,3 +1,12 @@
+sispmctl (4.11-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream version 4.11
+  * Move udev file from /etc to /usr/lih
+  * Add Appstream metadata (Closes: #838068)
+
+ -- Hilko Bengen <bengen@debian.org>  Sun, 23 Jul 2023 17:50:05 +0200
+
 sispmctl (4.10-2) unstable; urgency=medium
 
   * Fix system user name (typo)
