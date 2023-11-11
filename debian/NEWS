@@ -1,0 +1,11 @@
+sispmctl (4.11-2) unstable; urgency=medium
+
+  The sispmctl user is no longer being created and no longer used by the
+  package. If you do not use this user, you may delete it. Beware that
+  deluser and userdel both also delete the corresponding group, which still
+  is in use by the udev rules and the example systemd unit.
+
+      userdel sispmctl
+      systemd-sysuser
+
+ -- Helmut Grohne <helmut@subdivi.de>  Sat, 11 Nov 2023 13:39:53 +0100

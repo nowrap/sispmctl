@@ -1,0 +1,42 @@
+From: Helmut Grohne <helmut@subdivi.de>
+Subject: avoid the need for a sispmctl user by leveraging DynamicUser
+Forwarded: no
+
+--- sispmctl-4.11.orig/README.md
++++ sispmctl-4.11/README.md
+@@ -88,9 +88,9 @@
+ The web server can be started automatically with systemd. This requires the
+ following steps:
+ 
+-Create user sispmctl in group sispmctl. The command on Debian and Ubuntu is
++Create group sispmctl. The command on Debian and Ubuntu is
+ 
+-    adduser sispmctl --system --group --disabled-login --no-create-home
++    addgroup sispmctl --system
+ 
+ Provide the necessary authorizations via udev (see below).
+ 
+@@ -114,8 +114,8 @@
+ 
+     mkdir /etc/sispmctl
+     base64 > /etc/sispmctl/password
+-    chown sispmctl:sispmctl /etc/sispmctl/password
+-    chmod 400 /etc/sispmctl/password
++    chown root:sispmctl /etc/sispmctl/password
++    chmod 640 /etc/sispmctl/password
+ 
+ Or just use the bash script examples/passwordsetup.sh.
+ 
+--- sispmctl-4.11.orig/examples/sispmctl.service
++++ sispmctl-4.11/examples/sispmctl.service
+@@ -42,8 +42,8 @@
+ SystemCallArchitectures=native
+ UMask=177
+ 
+-User=sispmctl
+-Group=sispmctl
++DynamicUser=true
++SupplementaryGroups=sispmctl
+ Type=forking
+ ExecStart=/usr/local/bin/sispmctl -p 2638 -l
+ SyslogIdentifier=sispmctl

@@ -1,3 +1,12 @@
+sispmctl (4.11-2) unstable; urgency=medium
+
+  * QA upload.
+  * Run service with DynamicUser to avoid the need for a sispmctl user.
+  * Manage group creation using standard sysusers.d mechanism.
+  * DEP17: Move udev.rules to /usr via dh-sequence-movetousr.
+
+ -- Helmut Grohne <helmut@subdivi.de>  Sat, 11 Nov 2023 12:50:41 +0100
+
 sispmctl (4.11-1) unstable; urgency=medium
 
   * QA upload.
