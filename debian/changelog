@@ -1,3 +1,11 @@
+sispmctl (4.12-1) UNRELEASED; urgency=medium
+
+  * QA upload.
+
+  * New upstream version 4.12
+
+ -- Petter Reinholdtsen <pere@debian.org>  Fri, 19 Jul 2024 18:29:18 +0200
+
 sispmctl (4.11-3) unstable; urgency=medium
 
   * QA upload.
