@@ -1,3 +1,16 @@
+sispmctl (4.11-3) unstable; urgency=medium
+
+  * QA upload.
+
+  * Updated Standards-Version from 4.6.2 to 4.7.0.
+  * Use wrap-and-sort -at for debian control files.
+  * Replaced obsolete pkg-config build dependency with pkgconf.
+  * Trim trailing whitespace.
+  * Use secure URI in debian/watch.
+  * Corrected Appstream metainfo and rename to reverse DNS ID based filename.
+
+ -- Petter Reinholdtsen <pere@debian.org>  Fri, 19 Jul 2024 18:14:36 +0200
+
 sispmctl (4.11-2) unstable; urgency=medium
 
   * QA upload.
