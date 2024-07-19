@@ -91,4 +91,3 @@ sispmctl (2.4b-1) unstable; urgency=low
   * Initial release (Closes: #415633).
 
  -- Uwe Hermann <uwe@debian.org>  Sun,  8 Apr 2007 03:16:25 +0200
-
