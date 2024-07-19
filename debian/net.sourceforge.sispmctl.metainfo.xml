@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component>
   <id>net.sourceforge.sispmctl</id>
+  <metadata_license>MIT</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>sispmctl</name>
-  <url type="homepage">http://sispmctl.sourceforge.net/</url>
+  <url type="homepage">https://sispmctl.sourceforge.net/</url>
   <summary>Control Gembird SIS-PM programmable power outlet strips</summary>
   <description>
     <p>
