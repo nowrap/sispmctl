@@ -1,2 +1,2 @@
 version=4
-http://sf.net/sispmctl/sispmctl-(\d.*)\.tar\.gz
+https://sf.net/sispmctl/sispmctl-(\d.*)\.tar\.gz
