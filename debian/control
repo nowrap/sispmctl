@@ -4,7 +4,6 @@ Priority: optional
 Maintainer: Debian QA Group <packages@qa.debian.org>
 Build-Depends: debhelper-compat (=13),
                dh-sequence-installsysusers,
-               dh-sequence-movetousr,
                libusb-dev (>= 0.1.8),
                pkgconf,
 Standards-Version: 4.7.0

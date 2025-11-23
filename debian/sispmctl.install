@@ -1,2 +1,2 @@
 debian/net.sourceforge.sispmctl.metainfo.xml usr/share/metainfo/
-examples/60-sispmctl.rules lib/udev/rules.d/
+examples/60-sispmctl.rules usr/lib/udev/rules.d/
