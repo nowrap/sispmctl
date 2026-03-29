@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Debian QA Group <packages@qa.debian.org>
 Build-Depends: debhelper-compat (=13),
                dh-sequence-installsysusers,
-               libusb-dev (>= 0.1.8),
+               libusb-1.0-0-dev (>= 2:1.0.16),
                pkgconf,
 Standards-Version: 4.7.0
 Homepage: http://sispmctl.sourceforge.net/

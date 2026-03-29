@@ -1,3 +1,14 @@
+sispmctl (4.13-1) unstable; urgency=medium
+
+  * New upstream version 4.13
+  * Migrate from libusb-0.1 to libusb-1.0 (Closes: #nnnn)
+    - Fixes USBDEVFS_CLAIMINTERFACE ENOENT on Linux 6.x kernels
+    - USB reset on startup to work around truncated config descriptors
+      on Gembird Silver Shield PM (Cypress CY7C63001A) devices
+  * debian/control: Build-Depends libusb-dev -> libusb-1.0-0-dev
+
+ -- nowrap <nowrap@gmx.net>  Sat, 29 Mar 2026 22:00:00 +0100
+
 sispmctl (4.12-2) unstable; urgency=medium
 
   * QA upload.

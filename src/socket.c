@@ -19,6 +19,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -34,15 +35,14 @@
 #ifdef HAVE_NET_ETHERNET_H
 #include <net/ethernet.h>
 #endif
-#include <usb.h>
+#include <libusb-1.0/libusb.h>
 #include "sispm_ctl.h"
 #include "socket.h"
-#include "nethelp.h"
 
 #ifndef WEBLESS
 int listenport=LISTENPORT;
 
-void l_listen(int*sock, struct usb_device*dev, int devnum)
+void l_listen(int*sock, libusb_device *dev, int devnum)
 {
   int i;
   int s;
@@ -149,6 +149,7 @@ int *socket_init(char *bind_arg)
 
 socket_error:
   close(*s);
+  free(s);
   return NULL;
 }
 #endif // !WEBLESS

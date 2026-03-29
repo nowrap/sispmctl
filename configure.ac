@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.59])
-AC_INIT([sispmctl], [4.12], [xypron.glpk@gmx.de])
+AC_INIT([sispmctl], [4.13], [xypron.glpk@gmx.de])
 AC_CONFIG_AUX_DIR(admin)
 AC_CANONICAL_TARGET
 AM_INIT_AUTOMAKE
@@ -47,7 +47,7 @@ AS_HELP_STRING([--with-bindaddr=IP], [bind listening socket to IP]),
 AC_SUBST(BINDADDR)
 
 dnl check for libusb
-PKG_CHECK_MODULES(LIBUSB, libusb >= 0.1.11)
+PKG_CHECK_MODULES(LIBUSB, libusb-1.0 >= 1.0.16)
 CFLAGS="$CFLAGS $LIBUSB_CFLAGS"
 LIBS="$LIBS $LIBUSB_LIBS"
 
