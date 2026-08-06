@@ -1,3 +1,23 @@
+> **This is a work fork, not the upstream project.**
+>
+> It exists for one thing: migrating sispmctl from libusb-0.1 to libusb-1.0. On Linux 6.x the
+> kernel rejects `USBDEVFS_CLAIMINTERFACE` with `ENOENT` when libusb-0.1 is used — hit on
+> Debian 13 (trixie).
+>
+> | | |
+> |---|---|
+> | Upstream bug | https://sourceforge.net/p/sispmctl/bugs/30/ |
+> | Debian bug | https://bugs.debian.org/810458 (tagged `sid`, `forky`) |
+> | Upstream repo | http://sourceforge.net/p/sispmctl/git/ci/master/tree/ |
+> | `migrate-libusb1` | the libusb-1.0 migration |
+> | `debian-libusb1-migration` | Debian packaging on top of it |
+>
+> **Status:** under upstream review. See bug 30 for the changes requested on 2026-04-11 —
+> among them splitting the libusb migration from the device-specific USB reset, and signed
+> commits. The Debian package is orphaned (QA uploads), so that side will need a sponsor.
+>
+> Everything below is the upstream README.
+
 SiS-PM Control for Linux
 ========================
 
