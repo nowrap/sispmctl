@@ -60,7 +60,7 @@ The following configure options may be of interest:
 Dependencies
 ------------
 
-- libusb 0.1.9+ must be installed; libusb-config must be in $PATH
+- libusb-1.0 (>= 1.0.16) must be installed; detected via pkg-config
 
 Command Line Interface
 ----------------------
