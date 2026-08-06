@@ -633,6 +633,37 @@ int main(int argc, char *argv[])
 
   libusb_init(NULL);
 
+  /*
+   * Some Gembird devices (Cypress CY7C63001A) send a truncated
+   * configuration descriptor on the first USB enumeration, causing the
+   * kernel to register 0 interfaces.  A USB reset makes the device send
+   * the full descriptor on re-enumeration.
+   *
+   * We therefore do a first scan just to find and reset these devices,
+   * then re-enumerate so the kernel has correct descriptors.
+   */
+  devcnt = libusb_get_device_list(NULL, &devlist);
+  if (devcnt >= 0) {
+    for (ssize_t j = 0; j < devcnt; ++j) {
+      struct libusb_device_descriptor desc;
+      libusb_device_handle *h;
+      libusb_get_device_descriptor(devlist[j], &desc);
+      if (desc.idVendor == VENDOR_ID
+          && (desc.idProduct == PRODUCT_ID_SISPM ||
+              desc.idProduct == PRODUCT_ID_MSISPM_OLD ||
+              desc.idProduct == PRODUCT_ID_MSISPM_FLASH ||
+              desc.idProduct == PRODUCT_ID_SISPM_FLASH_NEW ||
+              desc.idProduct == PRODUCT_ID_SISPM_EG_PMS2)) {
+        if (libusb_open(devlist[j], &h) == 0) {
+          libusb_reset_device(h);
+          libusb_close(h);
+        }
+      }
+    }
+    libusb_free_device_list(devlist, 1);
+  }
+
+  /* Now re-enumerate — devices have correct descriptors after reset */
   devcnt = libusb_get_device_list(NULL, &devlist);
   if (devcnt < 0) {
     fprintf(stderr, "Failed to get USB device list\n");
