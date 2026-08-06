@@ -1,7 +1,7 @@
 sispmctl (4.13-1) unstable; urgency=medium
 
   * New upstream version 4.13
-  * Migrate from libusb-0.1 to libusb-1.0 (Closes: #nnnn)
+  * Migrate from libusb-0.1 to libusb-1.0 (Closes: #810458)
     - Fixes USBDEVFS_CLAIMINTERFACE ENOENT on Linux 6.x kernels
     - USB reset on startup to work around truncated config descriptors
       on Gembird Silver Shield PM (Cypress CY7C63001A) devices
